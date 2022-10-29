@@ -62,6 +62,13 @@ function each(coll, func) {
   
   // Note: using MAP
   function addOne(array) {
+    for (var i = array.length - 1; i >= 0; i--) {
+      array[i]++;
+      
+      
+  }
+  return array;
+
     // TODO: your code here
   }
   
@@ -75,6 +82,8 @@ function each(coll, func) {
   
   // Note: using FILTER
   function removeEveryOther() {
+    for(var i = 0; i < myArr.length; i++) {
+    fruits.splice(i+1,1);
     // TODO: your code here
   }
   
@@ -88,6 +97,7 @@ function each(coll, func) {
     // TODO: your work goes here
   }
   function stringLengths(array) {
+    return Object.values(arguments).map(x => x.length);
     // given an array of strings, return an array containing all string lengths
     // TODO: your work goes here
     // example: ["hello", "how", "are", "you", "doing?"] => [5, 3, 3, 3, 6]
