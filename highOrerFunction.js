@@ -91,9 +91,16 @@ function each(coll, func) {
   // use map to write the following functions
   
   function doubleAll(nums) {
+    nums.map(n => n*2)
+  }  
     // TODO: your work goes here
-  }
+  
   function squareAll(nums) {
+  
+      return nums.map(function (x) {
+        return Math.pow(x, 2);
+      });
+    
     // TODO: your work goes here
   }
   function stringLengths(array) {
