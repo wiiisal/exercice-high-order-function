@@ -62,12 +62,11 @@ function each(coll, func) {
   
   // Note: using MAP
   function addOne(array) {
-    for (var i = array.length - 1; i >= 0; i--) {
-      array[i]++;
+     return map(array,function(element) {
+      element+1
       
       
-  }
-  return array;
+     })
 
     // TODO: your code here
   }
@@ -81,65 +80,109 @@ function each(coll, func) {
   // None of the arrays will be empty, so you don't have to worry about that!
   
   // Note: using FILTER
-  function removeEveryOther() {
-    for(var i = 0; i < myArr.length; i++) {
-    fruits.splice(i+1,1);
-    // TODO: your code here
+ 
+
+  function removeEveryOther(array) {
+    return filter(array,function(element,index){
+      if(index%2===0){
+        return element
+      }
+    })
   }
+   
   
   /*****************************  3  ***********************/
   // use map to write the following functions
   
   function doubleAll(nums) {
-    nums.map(n => n*2)
+    return map(nums,function(element){
+     return element*2
+    })
+    
   }  
     // TODO: your work goes here
   
   function squareAll(nums) {
   
-      return nums.map(function (x) {
+      return map(nums,function (x) {
         return Math.pow(x, 2);
       });
-    
-    // TODO: your work goes here
   }
-  function stringLengths(array) {
-    return Object.values(arguments).map(x => x.length);
+    // TODO: your work goes here
+
+    function stringLengths(array) {
+      return map(array,function(element){
+       return  element.length
+
+      } );
+    }
     // given an array of strings, return an array containing all string lengths
     // TODO: your work goes here
     // example: ["hello", "how", "are", "you", "doing?"] => [5, 3, 3, 3, 6]
-  }
+  
   
   /*****************************  4  ***********************/
   // use filter to write the following functions
   
   function odds(nums) {
-    // TODO: your work goes here
+    return filter(nums,function(element,index){
+      if(element%2===1){
+        return element
+      }
+    })
   }
+    // TODO: your work goes here
+  
   function positives(nums) {
+    return filter(nums,function(element){
+      if(element>=0)
+      return element;
+    })}
     // TODO: your work goes here
-  }
+  
   function negatives(nums) {
+    return filter(nums,function(element){
+    if(element<0)
+    return element;
+  })
     // TODO: your work goes here
   }
   function evenLength(nums) {
-    // TODO: your work goes here
+    return filter(nums,function(element){
+      if(element.length%2===0)
+      return element
+    })
   }
+    // TODO: your work goes here
+  
   function largerThanSix(nums) {
+    return filter(nums,function(element){
+      if(element>6)
+      return element
+    })
+  }
     // (given an array of numbers, returns those larger than 6)
     // TODO: your work goes here
-  }
+  
   
   /*****************************  5  ***********************/
   // use reduce to write the following functions
   
   function sum(nums) {
-    // TODO: your work goes here
+    return  reduce(nums, f(acc,element){
+      return acc =  acc+element
+    }) 
   }
+    // TODO: your work goes here
   
-  function product(nums) {
-    // TODO: your work goes here
+  
+  function product(nums) { 
+    return  reduce(nums, f(acc,element){
+      return acc =  acc*element
+    }) 
   }
+    // TODO: your work goes here
+  
   
   function allOdds(nums) {
     // returns true if all numbers in the array are odd, false if one of them is even
